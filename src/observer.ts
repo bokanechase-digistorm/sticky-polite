@@ -72,10 +72,10 @@ const handleVisualViewport = () => {
 
 const resizeObserver = new ResizeObserver(handleResizeObserver);
 
-export const mountElement = (element: HTMLElement) => {
+export const mountElement = (element: HTMLElement, scrollParent?: HTMLElement | null) => {
   if (stateRegistry.has(element)) return;
 
-  const parent = getScrollParent(element);
+  const parent = scrollParent ?? getScrollParent(element);
   const directParent = element.parentElement || parent;
 
   const attributeObserver = new MutationObserver((mutations) => {

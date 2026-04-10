@@ -2,7 +2,7 @@
  * Polite Sticky (Directional Reveal) Utility
  */
 
-import { initPoliteSticky } from "./observer";
+import { initPoliteSticky, mountElement } from "./observer";
 
 if (typeof window !== "undefined") {
   if (document.readyState === "loading") {
@@ -12,4 +12,5 @@ if (typeof window !== "undefined") {
   }
 }
 
+export { mountElement };
 export default initPoliteSticky;
